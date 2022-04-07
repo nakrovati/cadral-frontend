@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use "Styles/colors";
-
 .header {
   padding: 20px 40px;
 

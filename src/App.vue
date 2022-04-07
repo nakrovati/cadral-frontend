@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use "Styles/colors";
 @use "sass:color";
+
 .line {
   background-color: color.scale($color: colors.$primary, $lightness: 25%);
   height: 6px;

@@ -1,0 +1,8 @@
+@use "Styles/colors";
+
+@media (prefers-color-scheme: light) {
+  #app {
+    background-color: colors.$background-light;
+    color: colors.$text-black;
+  }
+}

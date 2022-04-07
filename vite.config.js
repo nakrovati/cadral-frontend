@@ -3,6 +3,13 @@ import vue from "@vitejs/plugin-vue";
 const path = require("path");
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "./src/styles/colors";',
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
