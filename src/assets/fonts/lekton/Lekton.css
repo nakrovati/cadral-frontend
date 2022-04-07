@@ -1,0 +1,23 @@
+@font-face {
+  font-display: swap;
+  font-family: Lekton;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("Lekton"),
+    local("Lekton Regular"),
+    url("./Lekton-Regular.woff2") format("woff2"),
+    url("./Lekton-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Lekton;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local("Lekton"),
+    local("Lekton Bold"),
+    url("./Lekton-Bold.woff2") format("woff2"),
+    url("./Lekton-Bold.woff") format("woff");
+}
