@@ -59,9 +59,11 @@ export default {
     font-weight: bold;
     margin: 0;
   }
+
   &__subtitle {
     font-size: 24px;
   }
+
   &__image {
     height: auto;
     max-width: 100%;

@@ -1,3 +1,19 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  tab-size: 4;
+  tab-size: 4;
+}
+
+html {
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
 }
@@ -7,43 +23,20 @@ a {
   text-decoration: none;
 }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-html {
-  line-height: 1.15;
-  tab-size: 4;
-  text-size-adjust: 100%;
-}
-
-img {
-  display: block;
-}
-
-li {
-  list-style-type: none;
-}
-
 hr {
   color: inherit;
+  height: 0;
 }
 
 abbr[title] {
   text-decoration: underline dotted;
 }
 
-b,
-strong {
+b,strong {
   font-weight: bolder;
 }
 
-code,
-kbd,
-samp,
-pre {
+code,kbd,pre,samp {
   font-size: 1em;
 }
 
@@ -51,8 +44,7 @@ small {
   font-size: 80%;
 }
 
-sub,
-sup {
+sub,sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -60,16 +52,20 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 table {
-  border-color: inherit; /* 2 */
-  text-indent: 0; /* 1 */
+  border-color: inherit;
+  text-indent: 0;
+}
+
+img {
+  display: block;
 }
 
 button,
@@ -77,27 +73,21 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-
-button {
-  border: none;
-  cursor: pointer;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit],
+button {
   appearance: button;
 }
 
@@ -127,7 +117,7 @@ progress {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   appearance: textfield;
   outline-offset: -2px;
 }

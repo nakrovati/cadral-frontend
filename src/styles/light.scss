@@ -1,8 +1,12 @@
 @use "Styles/colors";
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
   #app {
     background-color: colors.$background-light;
+    color: colors.$text-black;
+  }
+  
+  .header {
     color: colors.$text-black;
   }
 }
