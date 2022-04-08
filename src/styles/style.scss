@@ -4,5 +4,6 @@
 @use "Styles/dark.scss";
 
 #app {
+  min-height: 100vh;
   transition: color .5s ease, background-color .5s ease;
 }

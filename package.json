@@ -18,6 +18,9 @@
     "*.{css,scss,vue}": "stylelint --fix",
     "*.{js,json,md}": "prettier --write"
   },
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
     "autoprefixer": "^10.4.4",
@@ -32,10 +35,8 @@
     "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-order": "^5.0.0",
-    "vite": "^2.9.1"
-  },
-  "dependencies": {
-    "vue": "^3.2.31"
+    "vite": "^2.9.1",
+    "vite-svg-loader": "^3.2.0"
   },
   "packageManager": "yarn@3.2.0"
 }

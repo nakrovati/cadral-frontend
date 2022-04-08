@@ -11,7 +11,7 @@
         </h2>
         <img src="" alt="" class="inner__image" />
       </div>
-      <div class="form-of-reduction"></div>
+      <Reducer />
     </div>
   </main>
   <TheFooter />
@@ -20,10 +20,11 @@
 <script>
 import TheHeader from "Components/TheHeader.vue";
 import TheFooter from "Components/TheFooter.vue";
+import Reducer from "Components/Reducer.vue";
 
 export default {
   name: "App",
-  components: { TheHeader, TheFooter },
+  components: { TheHeader, TheFooter, Reducer },
   data() {
     return {};
   },
@@ -53,7 +54,7 @@ export default {
 .inner {
   font-family: Lekton, Arial, Helvetica, sans-serif;
   padding: 20px;
-  
+
   &__title {
     font-size: 64px;
     font-weight: bold;

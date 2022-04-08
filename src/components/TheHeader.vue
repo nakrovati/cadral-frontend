@@ -5,10 +5,19 @@
 </template>
 
 <script>
+import IconSun from "Icons/sun.svg";
+import IconMoon from "Icons/moon.svg";
+
 export default {
   name: "TheHeader",
+  components: {
+    IconSun,
+    IconMoon,
+  },
   data() {
     return {};
+  },
+  methods: {
   },
 };
 </script>
