@@ -3,12 +3,12 @@
     <div class="url-reducer__container">
       <input
         class="url-reducer__input"
+        placeholder="Enter the link here"
         type="text"
         ref="urlToReduce"
-        placeholder="Enter the link here"
         v-model="urlToReduce"
       />
-      <button v-on:click="copyToClipboard" class="button-copy">
+      <button class="button-copy" aria-label="copy text to clipboard" v-on:click="copyToClipboard">
         <Clipboard class="button-copy__icon" />
       </button>
     </div>
