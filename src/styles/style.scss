@@ -1,9 +1,14 @@
 @use "Fonts/fonts";
 @use "Styles/normalize";
-@use "Styles/light.scss";
-@use "Styles/dark.scss";
 
-#app {
+#app  {
   min-height: 100vh;
   transition: color .5s ease, background-color .5s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app, a {
+    background-color: colors.$background-dark;
+    color: colors.$text-white;
+  }
 }

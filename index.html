@@ -22,9 +22,22 @@
       href="./favicon-16x16.png"
     />
     <link rel="manifest" href="./manifest.json" />
+    <noscript
+      ><link rel="stylesheet" href="./noscript/noscript.css"
+    /></noscript>
     <title>Vite App</title>
   </head>
   <body>
+    <noscript class="noscript">
+      <object
+        type="image/svg+xml"
+        data="./noscript/noscript-javascript.svg"
+        class="noscript__icon"
+      ></object>
+      <div class="noscript__subtitle">
+        To use {Site name}, please enable Javascript
+      </div>
+    </noscript>
     <div id="app"></div>
     <script type="module" src="./src/main.js"></script>
   </body>

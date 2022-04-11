@@ -1,5 +1,4 @@
 <template>
-  <hr class="line" />
   <TheHeader />
   <main class="intro">
     <div class="container">
@@ -12,6 +11,7 @@
         <img src="" alt="" class="inner__image" />
       </div>
       <Reducer />
+      <div class="url-example">Example: https://google.com</div>
     </div>
   </main>
   <TheFooter />
@@ -25,20 +25,11 @@ import Reducer from "Components/Reducer.vue";
 export default {
   name: "App",
   components: { TheHeader, TheFooter, Reducer },
-  data() {
-    return {};
-  },
 };
 </script>
 
 <style lang="scss" scoped>
 @use "sass:color";
-
-.line {
-  background-color: color.scale($color: colors.$primary, $lightness: 25%);
-  height: 6px;
-  margin: 0;
-}
 
 .intro {
   padding: 0 20px;
@@ -69,5 +60,10 @@ export default {
     height: auto;
     max-width: 100%;
   }
+}
+
+.url-example {
+  font-size: 12px;
+  margin: 10px 20px 20px;
 }
 </style>
