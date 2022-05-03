@@ -1,9 +1,21 @@
 import { defineConfig } from "vite";
 import svgLoader from "vite-svg-loader";
 import vue from "@vitejs/plugin-vue";
-const path = require("path");
+import { resolve } from "path";
 
 export default defineConfig({
+  root: resolve(__dirname, "src"),
+  build: {
+    outDir: resolve(__dirname, "dist"),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        index: resolve(__dirname, "src", "index.html"),
+        404: resolve(__dirname, "src/404", "index.html"),
+      },
+    },
+  },
+  publicDir: resolve(__dirname, "public"),
   css: {
     preprocessorOptions: {
       scss: {
@@ -13,13 +25,17 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      Fonts: path.resolve(__dirname, "./src/assets/fonts"),
-      Icons: path.resolve(__dirname, "./src/assets/icons"),
-      Images: path.resolve(__dirname, "./src/assets/images"),
-      Components: path.resolve(__dirname, "./src/components"),
-      Styles: path.resolve(__dirname, "./src/styles"),
+      "@": resolve(__dirname, "./src"),
+      Fonts: resolve(__dirname, "./src/assets/fonts"),
+      Icons: resolve(__dirname, "./src/assets/icons"),
+      Images: resolve(__dirname, "./src/assets/images"),
+      Components: resolve(__dirname, "./src/components"),
+      Services: resolve(__dirname, "./src/services"),
+      Styles: resolve(__dirname, "./src/styles"),
     },
   },
   plugins: [vue(), svgLoader()],
+  server: {
+    port: 8080,
+  },
 });

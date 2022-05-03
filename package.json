@@ -1,13 +1,22 @@
 {
-  "name": "tiny-link",
+  "name": "cadral-frontend",
   "version": "1.0.0",
   "description": "",
   "main": "./src/main.js",
   "private": true,
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakrovati/cadral-frontend.git"
+  },
+  "author": "Daniil Zhuravlev <nakrovati@outlook.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nakrovati/cadral-frontend/issues"
+  },
+  "homepage": "https://github.com/nakrovati/cadral-frontend#readme",
   "scripts": {
     "dev": "vite",
+    "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "lint:style": "stylelint **/*.{css,scss,vue} --fix",
@@ -16,27 +25,26 @@
   },
   "lint-staged": {
     "*.{css,scss,vue}": "stylelint --fix",
-    "*.{js,json,md}": "prettier --write"
+    "*.{html,js,vue,json,md}": "prettier --write"
   },
   "dependencies": {
-    "vue": "^3.2.32"
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",
-    "autoprefixer": "^10.4.4",
+    "autoprefixer": "^10.4.5",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
+    "lint-staged": "^12.4.1",
     "postcss": "^8.4.12",
-    "postcss-html": "^1.3.0",
-    "postcss-scss": "^4.0.3",
+    "postcss-html": "^1.4.1",
+    "postcss-scss": "^4.0.4",
     "prettier": "^2.6.2",
-    "sass": "^1.50.0",
-    "stylelint": "^14.6.1",
+    "sass": "^1.51.0",
+    "stylelint": "^14.8.0",
     "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-order": "^5.0.0",
-    "vite": "^2.9.1",
-    "vite-svg-loader": "^3.2.0"
-  },
-  "packageManager": "yarn@3.2.0"
+    "vite": "^2.9.6",
+    "vite-svg-loader": "^3.3.0"
+  }
 }

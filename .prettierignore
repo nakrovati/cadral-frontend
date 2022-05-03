@@ -1,9 +1,5 @@
-node_modules
+.husky
 dist
-
-yarn.lock
-.yarn
-.pnp.*
-
+node_modules
 *.css
 *.scss

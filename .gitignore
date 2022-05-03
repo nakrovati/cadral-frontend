@@ -1,9 +1,2 @@
-node_modules
 dist
-
-.yarn/*
-!.yarn/patches
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
+node_modules

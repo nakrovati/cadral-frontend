@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -7,8 +8,9 @@
       "Icons/*": ["src/assets/icons/*"],
       "Images/*": ["src/assets/images/*"],
       "Components/*": ["src/components/*"],
+      "Services/*": ["src/services/*"],
       "Styles/*": ["src/styles/*"]
     }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["husky", "dist", "node_modules"]
 }
