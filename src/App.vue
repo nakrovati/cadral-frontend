@@ -4,13 +4,13 @@
     <div class="container">
       <div class="inner">
         <h1 class="inner__title">Shorten the link</h1>
-        <h2 class="inner__subtitle">
+        <div class="inner__subtitle">
           Create a short link to copy to your website, social media, and
           messengers.
-        </h2>
+        </div>
         <img src="" alt="" class="inner__image" />
       </div>
-      <Reducer />
+      <TheReducer />
       <div class="url-example">Example: https://google.com</div>
     </div>
   </main>
@@ -20,11 +20,11 @@
 <script>
 import TheHeader from "Components/TheHeader.vue";
 import TheFooter from "Components/TheFooter.vue";
-import Reducer from "Components/Reducer.vue";
+import TheReducer from "Components/TheReducer.vue";
 
 export default {
   name: "App",
-  components: { TheHeader, TheFooter, Reducer },
+  components: { TheHeader, TheFooter, TheReducer },
 };
 </script>
 
@@ -54,6 +54,7 @@ export default {
 
   &__subtitle {
     font-size: 24px;
+    line-height: 1.25;
   }
 
   &__image {
@@ -63,7 +64,19 @@ export default {
 }
 
 .url-example {
-  font-size: 12px;
+  font-size: 0.75em;
   margin: 10px 20px 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .inner {
+    &__title {
+      font-size: 3em;
+    }
+
+    &__subtitle {
+      font-size: 1.25em;
+    }
+  }
 }
 </style>

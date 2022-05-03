@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $primary: #1568c9;
 $background-light: #f5f5f5;
 $background-dark: #24292e;
@@ -7,9 +9,7 @@ $text-black: #000;
 $text-search-placeholder: #9395A5;
 
 $button: $primary;
-$button-hover: #004f80;
+$button-focus-outline: #EDBC64;
+$button-hover: color.scale($color: $primary, $blackness: 20%);
 $button-active: #114770;
 $button-disabled: #d9d9d9;
-
-$button-outline: #edf2fe;
-$button-outline-focus-border: $primary;

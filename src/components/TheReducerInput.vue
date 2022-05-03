@@ -8,7 +8,11 @@
         ref="urlToReduce"
         v-model="urlToReduce"
       />
-      <button class="button-copy" aria-label="copy text to clipboard" v-on:click="copyToClipboard">
+      <button
+        class="button-copy"
+        aria-label="copy text to clipboard"
+        v-on:click="copyToClipboard"
+      >
         <Clipboard class="button-copy__icon" />
       </button>
     </div>
@@ -28,10 +32,25 @@ export default {
     return { urlToReduce: null };
   },
   methods: {
-    reduceURL() {},
     copyToClipboard() {
       const textToCopy = this.$refs.urlToReduce.value;
       navigator.clipboard.writeText(textToCopy);
+    },
+
+    async reduceURL() {
+      const urlToReduce = {
+        initialUrl: this.urlToReduce,
+        dateCreated: new Date(),
+      };
+      // const response = await fetch("http://localhost:3000", {
+      //   method: "POST",
+      //   body: JSON.stringify(urlToReduce),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      const json = await response.json();
+      console.log(JSON.stringify(json));
     },
   },
 };
@@ -40,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .url-reducer {
   display: flex;
-  font-size: 16px;
+  font-size: 1em;
   justify-content: space-between;
 
   &__container {
@@ -62,37 +81,66 @@ export default {
       &::placeholder {
         color: colors.$text-search-placeholder;
       }
-    }
-
-    .button-copy {
-      background-color: unset;
-      border: 0;
-      height: 40px;
-      margin-right: 5px;
-      padding: 8px 11px;
-      position: absolute;
-      right: 0;
-      width: 40px;
+      &:active {
+        outline: initial;
+      }
+      &:focus {
+        outline: 4px solid #edbc64;
+      }
     }
   }
 
   &__button-reduce {
     background-color: colors.$button;
-    border: 0;
     border-radius: 10px;
     color: colors.$text-white;
     margin-left: 40px;
     padding: 14px 30px;
 
-    &:hover {
+    &:hover,
+    &:active {
       background-color: colors.$button-hover;
+    }
+    &:focus {
+      outline: 4px solid colors.$button-focus-border;
     }
   }
 }
 
-@media (max-width: 425px) {
+.button-copy {
+  background-color: unset;
+  border-radius: 5px;
+  height: 40px;
+  margin-right: 5px;
+  padding: 8px 11px;
+  position: absolute;
+  right: 0;
+  width: 40px;
+
+  &:focus {
+    background-color: #b0ccec;
+    outline: 4px solid colors.$button-focus-border;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .url-reducer__button-reduce {
     margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .url-reducer {
+    flex-wrap: wrap;
+
+    &__container {
+      width: 100%;
+    }
+
+    &__button-reduce {
+      margin: 10px 0 0 0;
+      width: 100%;
+    }
   }
 }
 </style>

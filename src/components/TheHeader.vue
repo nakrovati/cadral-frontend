@@ -16,7 +16,7 @@ export default {
 
   &__logo {
     font-family: Lekton, Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: Bold;
   }
 }
