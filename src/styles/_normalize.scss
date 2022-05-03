@@ -11,7 +11,12 @@ html {
 
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
   margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.15;
 }
 
 a {
@@ -36,30 +41,6 @@ code,kbd,pre,samp {
   font-size: 1em;
 }
 
-small {
-  font-size: 80%;
-}
-
-sub,sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
-
-table {
-  border-color: inherit;
-  text-indent: 0;
-}
-
 img {
   display: block;
   height: auto;
@@ -71,6 +52,7 @@ input,
 optgroup,
 select,
 textarea {
+  border: 0;
   font-family: inherit;
   font-size: 100%;
   margin: 0;
@@ -89,46 +71,15 @@ button {
   cursor: pointer;
 }
 
-::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-legend {
-  padding: 0;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
 [type=search] {
   appearance: textfield;
   outline-offset: -2px;
 }
 
-::-webkit-search-decoration {
-  appearance: none;
+*:focus-visible {
+  outline: 0;
 }
-
 ::-webkit-file-upload-button {
   appearance: button;
   font: inherit;
-}
-
-summary {
-  display: list-item;
 }
