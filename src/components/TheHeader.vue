@@ -4,11 +4,7 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: "TheHeader",
-};
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .header {
@@ -17,7 +13,7 @@ export default {
   &__logo {
     font-family: Lekton, Arial, Helvetica, sans-serif;
     font-size: 1.5em;
-    font-weight: Bold;
+    font-weight: bold;
   }
 }
 </style>
