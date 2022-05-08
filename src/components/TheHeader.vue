@@ -8,9 +8,11 @@
 
 <style lang="scss" scoped>
 .header {
+  margin: 0 auto;
+  max-width: 2560px;
   padding: 20px 40px;
 
-  &__logo {
+  .header__logo {
     font-family: Lekton, Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     font-weight: bold;
