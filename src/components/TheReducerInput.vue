@@ -5,55 +5,49 @@
         class="url-reducer__input"
         placeholder="Enter the link here"
         type="text"
-        ref="urlToReduce"
         v-model="urlToReduce"
       />
       <button
         class="button-copy"
         aria-label="copy text to clipboard"
-        v-on:click="copyToClipboard"
+        @click="copyToClipboard"
       >
-        <Clipboard class="button-copy__icon" />
+        <IconClipboard class="button-copy__icon" />
       </button>
     </div>
-    <button class="url-reducer__button-reduce" v-on:click="reduceURL">
-      Create
-    </button>
+    <button class="button button-reduce" @click="reduceURL">Create</button>
   </div>
 </template>
 
-<script>
-import Clipboard from "Icons/clipboard-regular.svg?component";
+<script setup>
+import { ref } from "vue";
+import IconClipboard from "Icons/clipboard.svg";
 
-export default {
-  name: "ReducerInput",
-  components: { Clipboard },
-  data() {
-    return { urlToReduce: null };
-  },
-  methods: {
-    copyToClipboard() {
-      const textToCopy = this.$refs.urlToReduce.value;
-      navigator.clipboard.writeText(textToCopy);
-    },
+const urlToReduce = ref(null);
 
-    async reduceURL() {
-      const urlToReduce = {
-        initialUrl: this.urlToReduce,
-        dateCreated: new Date(),
-      };
-      // const response = await fetch("http://localhost:3000", {
-      //   method: "POST",
-      //   body: JSON.stringify(urlToReduce),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-      const json = await response.json();
-      console.log(JSON.stringify(json));
-    },
-  },
-};
+async function copyToClipboard() {
+  try {
+    await navigator.clipboard.writeText(urlToReduce.value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function reduceURL() {
+  const urlToReduce = {
+    initialUrl: this.urlToReduce,
+    dateCreated: new Date(),
+  };
+  // const response = await fetch("http://localhost:3000", {
+  //   method: "POST",
+  //   body: JSON.stringify(urlToReduce),
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
+  const json = await response.json();
+  console.log(JSON.stringify(json));
+}
 </script>
 
 <style lang="scss" scoped>
@@ -62,7 +56,7 @@ export default {
   font-size: 1em;
   justify-content: space-between;
 
-  &__container {
+  .url-reducer__container {
     align-items: center;
     display: flex;
     flex-wrap: nowrap;
@@ -72,7 +66,6 @@ export default {
 
     .url-reducer__input {
       border: 1px solid black;
-      border-radius: 10px;
       padding: 13px 59px 13px 19px;
       position: relative;
       text-overflow: ellipsis;
@@ -81,45 +74,44 @@ export default {
       &::placeholder {
         color: colors.$text-search-placeholder;
       }
-      &:active {
-        outline: initial;
-      }
+
       &:focus {
+        border: none;
         outline: 4px solid #edbc64;
       }
     }
   }
+}
 
-  &__button-reduce {
-    background-color: colors.$button;
-    border-radius: 10px;
-    color: colors.$text-white;
-    margin-left: 40px;
-    padding: 14px 30px;
+.button-reduce {
+  background-color: colors.$button;
+  color: colors.$text-white;
+  margin-left: 40px;
+  padding: 14px 30px;
+  transition: background-color 0.3s ease;
 
-    &:hover,
-    &:active {
-      background-color: colors.$button-hover;
-    }
-    &:focus {
-      outline: 4px solid colors.$button-focus-border;
-    }
+  &:hover,
+  &:active {
+    background-color: colors.$button-hover;
+  }
+
+  &:focus {
+    outline: 4px solid colors.$button-focus-outline;
   }
 }
 
 .button-copy {
   background-color: unset;
-  border-radius: 5px;
   height: 40px;
   margin-right: 5px;
   padding: 8px 11px;
   position: absolute;
   right: 0;
   width: 40px;
+  z-index: 1;
 
   &:focus {
-    background-color: #b0ccec;
-    outline: 4px solid colors.$button-focus-border;
+    outline: 4px solid colors.$button-focus-outline;
   }
 }
 
@@ -138,7 +130,7 @@ export default {
     }
 
     &__button-reduce {
-      margin: 10px 0 0 0;
+      margin: 10px 0 0;
       width: 100%;
     }
   }
