@@ -18,7 +18,7 @@ body {
 
 @media (max-width: 425px) {
   .noscript__icon {
-    width: 100px
+    width: 100px;
   }
 
   .noscript__subtitle {
@@ -43,6 +43,6 @@ body {
   }
 
   .noscript__icon {
-    filter: brightness(85%)
+    filter: brightness(85%);
   }
 }
