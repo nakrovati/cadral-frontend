@@ -21,7 +21,7 @@
     "preview": "vite preview",
     "lint:style": "stylelint **/*.{css,scss,vue} --fix",
     "format": "prettier . --write",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{css,scss,vue}": "stylelint --fix",
