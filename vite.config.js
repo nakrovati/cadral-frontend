@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, "src", "index.html"),
         404: resolve(__dirname, "src/404", "index.html"),
+        "origin-url": resolve(__dirname, "src/origin-url", "index.html"),
       },
     },
   },
@@ -36,6 +37,8 @@ export default defineConfig({
   },
   plugins: [vue(), svgLoader()],
   server: {
+    https: true,
+    host: true,
     port: 8080,
   },
 });
