@@ -12,7 +12,7 @@
         aria-label="copy text to clipboard"
         @click="copyToClipboard"
       >
-        <IconClipboard class="button-copy__icon" />
+        <IconClipboardRegular class="button-copy__icon" />
       </button>
     </div>
     <button class="button button-reduce" @click="reduceURL">Create</button>
@@ -20,10 +20,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import IconClipboard from "Icons/clipboard.svg";
+import { ref, inject } from "vue";
+import IconClipboardRegular from "Icons/clipboard-regular.svg";
 
-const urlToReduce = ref(null);
+const { addUrl } = inject("urlProvide");
+
+const urlToReduce = ref();
 
 async function copyToClipboard() {
   try {
@@ -34,19 +36,21 @@ async function copyToClipboard() {
 }
 
 async function reduceURL() {
-  const urlToReduce = {
-    initialUrl: this.urlToReduce,
+  const url = {
+    initialUrl: urlToReduce.value,
     dateCreated: new Date(),
   };
-  // const response = await fetch("http://localhost:3000", {
-  //   method: "POST",
-  //   body: JSON.stringify(urlToReduce),
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // });
+
+  const response = await fetch("http://localhost:3000", {
+    method: "POST",
+    body: JSON.stringify(url),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
   const json = await response.json();
-  console.log(JSON.stringify(json));
+  addUrl(json);
 }
 </script>
 
@@ -62,7 +66,7 @@ async function reduceURL() {
     flex-wrap: nowrap;
     justify-content: space-between;
     position: relative;
-    width: 85%;
+    width: 100%;
 
     .url-reducer__input {
       border: 1px solid black;
@@ -74,11 +78,6 @@ async function reduceURL() {
       &::placeholder {
         color: colors.$text-search-placeholder;
       }
-
-      &:focus {
-        border: none;
-        outline: 4px solid #edbc64;
-      }
     }
   }
 }
@@ -87,16 +86,12 @@ async function reduceURL() {
   background-color: colors.$button;
   color: colors.$text-white;
   margin-left: 40px;
-  padding: 14px 30px;
+  padding: 14px 40px;
   transition: background-color 0.3s ease;
 
   &:hover,
   &:active {
     background-color: colors.$button-hover;
-  }
-
-  &:focus {
-    outline: 4px solid colors.$button-focus-outline;
   }
 }
 
@@ -109,14 +104,10 @@ async function reduceURL() {
   right: 0;
   width: 40px;
   z-index: 1;
-
-  &:focus {
-    outline: 4px solid colors.$button-focus-outline;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .url-reducer__button-reduce {
+  .button-reduce {
     margin-left: 20px;
   }
 }
@@ -125,14 +116,14 @@ async function reduceURL() {
   .url-reducer {
     flex-wrap: wrap;
 
-    &__container {
+    .url-reducer__container {
       width: 100%;
     }
+  }
 
-    &__button-reduce {
-      margin: 10px 0 0;
-      width: 100%;
-    }
+  .button-reduce {
+    margin: 10px 0 0;
+    width: 100%;
   }
 }
 </style>
