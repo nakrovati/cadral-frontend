@@ -1,5 +1,8 @@
+@use "./colors";
+
 body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 h1,
@@ -14,8 +17,19 @@ h6 {
 button,
 input {
   border-radius: 10px;
+
+  &:focus {
+    border: 0;
+    outline: 3px solid colors.$button-focus-outline;
+  }
 }
 
-button > object {
+button > svg {
   border-radius: 5px;
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    font-size: 16px;
+  }
 }

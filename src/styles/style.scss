@@ -3,13 +3,12 @@
 @use "base";
 
 #app {
+  height: 100vh;
   transition: color 0.5s ease, background-color 0.5s ease;
 }
 
 @media (prefers-color-scheme: dark) {
-  #app,
-  a {
+  #app {
     background-color: colors.$background-dark;
-    color: colors.$text-white;
   }
 }
