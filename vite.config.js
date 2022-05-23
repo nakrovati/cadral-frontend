@@ -38,7 +38,6 @@ export default defineConfig({
   plugins: [vue(), svgLoader()],
   server: {
     https: true,
-    host: true,
     port: 8080,
   },
 });
