@@ -75,6 +75,10 @@ async function reduceURL() {
       text-overflow: ellipsis;
       width: 100%;
 
+      &:focus {
+        border: 1px solid white;
+      }
+
       &::placeholder {
         color: colors.$text-search-placeholder;
       }
@@ -112,7 +116,7 @@ async function reduceURL() {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 520px) {
   .url-reducer {
     flex-wrap: wrap;
 
