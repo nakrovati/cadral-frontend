@@ -1,8 +1,8 @@
 <template>
   <li class="url-item">
-    <span class="url-item__initial-url">{{ props.initialUrl }}</span>
-    <span class="url-item__right-block"
-      ><a href="" class="url-item__short-url" ref="shortUrlRef">{{
+    <div class="url-item__initial-url">{{ props.initialUrl }}</div>
+    <div class="url-item__right-block">
+      <a href="" class="url-item__short-url" ref="shortUrlRef">{{
         props.shortUrl
       }}</a>
       <button
@@ -10,8 +10,8 @@
         @click="copyShortUrl"
       >
         Copy
-      </button></span
-    >
+      </button>
+    </div>
   </li>
 </template>
 
@@ -44,6 +44,7 @@ async function copyShortUrl() {
   display: grid;
   font-size: 0.8em;
   gap: 40px;
+  grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   list-style: none;
   padding: 1em 19px;
@@ -63,12 +64,31 @@ async function copyShortUrl() {
 
     .url-item__short-url {
       color: colors.$primary;
+      font-weight: 600;
     }
 
     .url-item__button-copy-short-url {
       color: colors.$primary;
       padding: 9px 30px;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .url-item {
+    gap: 0;
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+
+    .url-item__right-block {
+      margin: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .url-item__right-block {
+    gap: unset;
   }
 }
 </style>
