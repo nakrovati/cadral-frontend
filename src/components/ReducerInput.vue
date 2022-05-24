@@ -23,9 +23,9 @@
 import { ref, inject } from "vue";
 import IconClipboardRegular from "Icons/clipboard-regular.svg";
 
-const { addUrl } = inject("urlProvide");
-
 const urlToReduce = ref();
+const { addUrl } = inject("urlProvide");
+const { VITE_BACKEND_URL } = import.meta.env;
 
 async function copyToClipboard() {
   try {
@@ -41,7 +41,7 @@ async function reduceURL() {
     dateCreated: new Date(),
   };
 
-  const response = await fetch("http://localhost:3000", {
+  const response = await fetch(VITE_BACKEND_URL, {
     method: "POST",
     body: JSON.stringify(url),
     headers: {
