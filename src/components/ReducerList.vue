@@ -2,6 +2,7 @@
   <ul v-if="isUrlArrayEmpty" class="url-list">
     <ReducerListItem
       v-for="item in urlArray"
+      :key="item.shortUrl"
       :initialUrl="item.initialUrl"
       :shortUrl="item.shortUrl"
     />
