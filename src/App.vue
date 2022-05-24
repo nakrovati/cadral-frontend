@@ -8,7 +8,6 @@
           Create a short link to copy to your website, social media, and
           messengers.
         </div>
-        <img src="" alt="" class="inner__image" />
       </div>
       <TheReducer />
       <div class="url-example">Example: https://google.com</div>
@@ -17,15 +16,10 @@
   <TheFooter />
 </template>
 
-<script>
+<script setup>
 import TheHeader from "Components/TheHeader.vue";
 import TheFooter from "Components/TheFooter.vue";
-import TheReducer from "Components/TheReducer.vue";
-
-export default {
-  name: "App",
-  components: { TheHeader, TheFooter, TheReducer },
-};
+import Reducer from "Components/Reducer.vue";
 </script>
 
 <style lang="scss" scoped>
