@@ -22,7 +22,7 @@ watch(urlArray.value, () => {
 });
 
 function addUrl(urlForArray) {
-  urlArray.value.push(urlForArray) - 1;
+  urlArray.value.unshift(urlForArray);
 }
 
 provide("urlProvide", { urlArray, addUrl });

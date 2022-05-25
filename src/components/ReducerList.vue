@@ -26,7 +26,7 @@ const isUrlArrayEmpty = computed(() => {
   border: solid black 1px;
   border-radius: 10px;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
