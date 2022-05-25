@@ -33,6 +33,7 @@
 .menu {
   .menu__list {
     display: flex;
+    margin: 0;
 
     .menu__item {
       list-style-type: none;
