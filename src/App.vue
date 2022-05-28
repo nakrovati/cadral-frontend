@@ -4,10 +4,9 @@
     <div class="container">
       <div class="inner">
         <div class="inner__left-section">
-          <h1 class="inner__title">Shorten the link</h1>
+          <h1 class="inner__title">{{ t("inner.title") }}</h1>
           <div class="inner__subtitle">
-            Create a short link to copy to your website, social media, and
-            messengers.
+            {{ t("inner.subtitle") }}
           </div>
         </div>
         <div class="inner__right-section">
@@ -31,9 +30,12 @@
 </template>
 
 <script setup>
+import { useI18n } from "vue-i18n";
 import TheHeader from "Components/TheHeader.vue";
 import TheFooter from "Components/TheFooter.vue";
 import Reducer from "Components/Reducer.vue";
+
+const { t } = useI18n();
 </script>
 
 <style lang="scss" scoped>

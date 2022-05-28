@@ -1,0 +1,12 @@
+{
+  "inner": {
+    "title": "Shorten the link",
+    "subtitle": "Create a short link to copy to your website, social media, and messengers."
+  },
+  "header": {
+    "showOriginUrl": "show origin url"
+  },
+  "reducer": {
+    "copyButton": "copy"
+  }
+}

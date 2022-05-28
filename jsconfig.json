@@ -7,6 +7,7 @@
       "Fonts/*": ["src/assets/fonts/*"],
       "Icons/*": ["src/assets/icons/*"],
       "Images/*": ["src/assets/images/*"],
+      "Configs/*": ["src/configs/*"],
       "Components/*": ["src/components/*"],
       "Services/*": ["src/services/*"],
       "Styles/*": ["src/styles/*"]

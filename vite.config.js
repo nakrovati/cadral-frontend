@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import svgLoader from "vite-svg-loader";
 import vue from "@vitejs/plugin-vue";
+import vueI18n from "@intlify/vite-plugin-vue-i18n";
 import { resolve } from "path";
 
 export default defineConfig({
@@ -31,11 +32,18 @@ export default defineConfig({
       Icons: resolve(__dirname, "./src/assets/icons"),
       Images: resolve(__dirname, "./src/assets/images"),
       Components: resolve(__dirname, "./src/components"),
+      Configs: resolve(__dirname, "./src/configs"),
       Services: resolve(__dirname, "./src/services"),
       Styles: resolve(__dirname, "./src/styles"),
     },
   },
-  plugins: [vue(), svgLoader()],
+  plugins: [
+    vue(),
+    vueI18n({
+      include: resolve(__dirname, "./src/locales/**"),
+    }),
+    svgLoader(),
+  ],
   server: {
     https: true,
     port: 8080,

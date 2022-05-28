@@ -28,9 +28,11 @@
     "*.{js,json,html,vue,css,scss,md}": "prettier --write"
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-i18n": "^9.1.10"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "autoprefixer": "^10.4.5",
     "husky": "^8.0.1",
