@@ -2,12 +2,12 @@
   <div>
     <ReducerInput />
     <div class="url-example">Example: https://google.com</div>
-    <ReducerList />
+    <ReducerList v-if="isUrlArrayEmpty" />
   </div>
 </template>
 
 <script setup>
-import { ref, watch, provide } from "vue";
+import { ref, watch, computed, provide } from "vue";
 import ReducerInput from "Components/ReducerInput.vue";
 import ReducerList from "Components/ReducerList.vue";
 
@@ -16,6 +16,10 @@ const urlArray = ref(
     ? []
     : JSON.parse(localStorage.getItem("counter"))
 );
+
+const isUrlArrayEmpty = computed(() => {
+  return urlArray.value.length ? true : false;
+});
 
 watch(urlArray.value, () => {
   localStorage.setItem("counter", JSON.stringify(urlArray.value));

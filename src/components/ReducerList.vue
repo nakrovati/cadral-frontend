@@ -1,8 +1,8 @@
 <template>
-  <ul v-if="isUrlArrayEmpty" class="url-list">
+  <ul class="url-list">
     <ReducerListItem
-      v-for="item in urlArray"
-      :key="item.shortUrl"
+      v-for="(item, index) in urlArray"
+      :key="index"
       :initialUrl="item.initialUrl"
       :shortUrl="item.shortUrl"
     />
@@ -10,21 +10,17 @@
 </template>
 
 <script setup>
-import { inject, computed } from "vue";
+import { inject } from "vue";
 import ReducerListItem from "Components/ReducerListItem.vue";
 
 const { urlArray } = inject("urlProvide");
-
-const isUrlArrayEmpty = computed(() => {
-  return !urlArray.value.length ? false : true;
-});
 </script>
 
 <style lang="scss" scoped>
 .url-list {
   background-color: white;
-  border: solid black 1px;
   border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0 0 0 / 15%);
   display: flex;
   flex-direction: column;
   margin: 0;
