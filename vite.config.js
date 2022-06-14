@@ -33,8 +33,10 @@ export default defineConfig({
       Images: resolve(__dirname, "./src/assets/images"),
       Components: resolve(__dirname, "./src/components"),
       Configs: resolve(__dirname, "./src/configs"),
+      Router: resolve(__dirname, "./src/router"),
       Services: resolve(__dirname, "./src/services"),
       Styles: resolve(__dirname, "./src/styles"),
+      Views: resolve(__dirname, "./src/views"),
     },
   },
   plugins: [
