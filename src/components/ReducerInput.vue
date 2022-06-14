@@ -36,6 +36,22 @@ async function copyToClipboard() {
 }
 
 async function reduceURL() {
+  if (!urlToReduce.value) {
+    return false;
+  }
+
+  const urlWithHttp =
+    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+  const urlWithoutHttp =
+    /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+
+  if (
+    !urlWithHttp.test(urlToReduce.value) &&
+    !urlWithoutHttp.test(urlToReduce.value)
+  ) {
+    return;
+  }
+
   const url = {
     initialUrl: urlToReduce.value,
     dateCreated: new Date(),
@@ -50,7 +66,7 @@ async function reduceURL() {
   });
 
   const json = await response.json();
-  addUrl(json);
+  await addUrl(json);
 }
 </script>
 
@@ -69,15 +85,12 @@ async function reduceURL() {
     width: 100%;
 
     .url-reducer__input {
-      border: 1px solid black;
-      padding: 13px 59px 13px 19px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0 0 0 / 15%);
+      padding: 14px 60px 14px 20px;
       position: relative;
       text-overflow: ellipsis;
       width: 100%;
-
-      &:focus {
-        border: 1px solid white;
-      }
 
       &::placeholder {
         color: colors.$text-search-placeholder;
@@ -86,28 +99,35 @@ async function reduceURL() {
   }
 }
 
-.button-reduce {
-  background-color: colors.$button;
-  color: colors.$text-white;
-  margin-left: 40px;
-  padding: 14px 40px;
-  transition: background-color 0.3s ease;
-
-  &:hover,
-  &:active {
-    background-color: colors.$button-hover;
-  }
-}
-
 .button-copy {
-  background-color: unset;
-  height: 40px;
-  margin-right: 5px;
+  background-color: inherit;
+  height: 100%;
   padding: 8px 11px;
   position: absolute;
   right: 0;
   width: 40px;
   z-index: 1;
+
+  &:focus {
+    outline: 3px solid colors.$button-copy-short-url-hover;
+  }
+
+  &:hover,
+  &:active {
+    background-color: colors.$button-copy-short-url-hover;
+  }
+}
+
+.button-reduce {
+  background-color: colors.$button;
+  color: colors.$text-white;
+  margin-left: 40px;
+  padding: 14px 40px;
+
+  &:hover,
+  &:active {
+    background-color: colors.$button-hover;
+  }
 }
 
 @media screen and (max-width: 768px) {
