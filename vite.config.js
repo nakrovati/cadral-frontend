@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
-import svgLoader from "vite-svg-loader";
 import vue from "@vitejs/plugin-vue";
 import vueI18n from "@intlify/vite-plugin-vue-i18n";
+import svgLoader from "vite-svg-loader";
 import { resolve } from "path";
 
 export default defineConfig({
@@ -12,8 +12,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "src", "index.html"),
-        404: resolve(__dirname, "src/404", "index.html"),
-        "origin-url": resolve(__dirname, "src/origin-url", "index.html"),
+      },
+      manualChunks: {
+        "vendor.vue": ["node_modules/vue/dist/vue.esm-bundler.js"],
+        "vendor.vue-i18n": ["node_modules/vue-i18n/index.js"],
       },
     },
   },
