@@ -5,11 +5,8 @@
       <a href="" class="url-item__short-url" ref="shortUrlRef">{{
         props.shortUrl
       }}</a>
-      <button
-        class="button url-item__button-copy-short-url"
-        @click="copyShortUrl"
-      >
-        Copy
+      <button class="url-item__button-copy-short-url" @click="copyShortUrl">
+        {{ t("reducer.copyButton") }}
       </button>
     </div>
   </li>
@@ -17,13 +14,16 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
+const shortUrlRef = ref();
 
 const props = defineProps({
   initialUrl: { type: String },
   shortUrl: { type: String },
 });
-
-const shortUrlRef = ref(null);
 
 onMounted(() => {
   shortUrlRef.value.href = props.initialUrl;
@@ -47,7 +47,7 @@ async function copyShortUrl() {
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   list-style: none;
-  padding: 1em 19px;
+  padding: 1em 20px;
 
   .url-item__initial-url {
     overflow: hidden;
@@ -68,8 +68,19 @@ async function copyShortUrl() {
     }
 
     .url-item__button-copy-short-url {
+      background-color: colors.$button-copy-short-url;
+      border-radius: 5px;
       color: colors.$primary;
       padding: 9px 30px;
+
+      &:focus {
+        outline: 3px solid colors.$button-copy-short-url-hover;
+      }
+
+      &:hover,
+      &:active {
+        background-color: colors.$button-copy-short-url-hover;
+      }
     }
   }
 }
