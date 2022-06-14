@@ -1,8 +1,15 @@
 @use "./colors";
 
 body {
+  background-color: colors.$background-light;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 20px;
+}
+
+body,
+button,
+a {
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 h1,
@@ -14,22 +21,18 @@ h6 {
   font-family: Lekton, Arial, Helvetica, sans-serif;
 }
 
-button,
-input {
+button {
   border-radius: 10px;
-
-  &:focus {
-    border: 0;
-    outline: 3px solid colors.$button-focus-outline;
-  }
-}
-
-button > svg {
-  border-radius: 5px;
 }
 
 @media screen and (max-width: 425px) {
   body {
     font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: colors.$background-dark;
   }
 }
