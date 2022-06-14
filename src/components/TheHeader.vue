@@ -1,27 +1,60 @@
 <template>
   <header class="header">
     <div class="logo">
-      <a href="/">Rapid URL</a>
+      <router-link to="/">Cadral URL</router-link>
     </div>
     <nav class="menu">
-      <ul class="menu__list">
-        <li class="menu__item">
-          <a href="/origin-url/">show origin url</a>
-        </li>
-      </ul>
+      <button @click="isOpen = true">
+        {{ t("header.showOriginUrl") }}
+      </button>
+      <teleport to="body">
+        <div class="modal" v-if="isOpen">
+          <TheOriginUrlModal
+            @close="isOpen = false"
+            title="Does this work?"
+            msg="I hope so"
+          />
+        </div>
+      </teleport>
     </nav>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+import TheOriginUrlModal from "Components/TheOriginUrlModal.vue";
+
+const { t } = useI18n();
+
+const isOpen = ref(false);
+</script>
 
 <style lang="scss" scoped>
+.modal {
+  align-items: center;
+  background-color: rgb(0 0 0 / 10%);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  > div {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 2560px;
-  padding: 20px 40px;
+  padding: 10px 40px;
 }
 
 .logo {
@@ -31,17 +64,15 @@
 }
 
 .menu {
-  .menu__list {
-    display: flex;
-    margin: 0;
+  display: flex;
 
-    .menu__item {
-      list-style-type: none;
+  button {
+    background-color: inherit;
+    color: inherit;
+    padding: 0;
 
-      &:hover {
-        color: colors.$primary;
-        transition: color 0.3s ease;
-      }
+    &:hover {
+      color: colors.$primary;
     }
   }
 }
