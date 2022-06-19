@@ -2,7 +2,9 @@
   <div>
     <ReducerInput />
     <div class="url-example">Example: https://google.com</div>
-    <ReducerList v-if="isUrlArrayEmpty" />
+    <Transition>
+      <ReducerList v-if="isUrlArrayEmpty" />
+    </Transition>
   </div>
 </template>
 
