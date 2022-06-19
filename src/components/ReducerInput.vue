@@ -22,6 +22,7 @@
 <script setup>
 import { ref, inject } from "vue";
 import IconClipboardRegular from "Icons/clipboard-regular.svg";
+import isStringUrl from "Helpers/isStringUrl.js";
 
 const urlToReduce = ref();
 const { addUrl } = inject("urlProvide");
@@ -40,16 +41,8 @@ async function reduceURL() {
     return false;
   }
 
-  const urlWithHttp =
-    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
-  const urlWithoutHttp =
-    /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
-
-  if (
-    !urlWithHttp.test(urlToReduce.value) &&
-    !urlWithoutHttp.test(urlToReduce.value)
-  ) {
-    return;
+  if (!isStringUrl(urlToReduce.value)) {
+    return false;
   }
 
   const url = {
@@ -57,7 +50,7 @@ async function reduceURL() {
     dateCreated: new Date(),
   };
 
-  const response = await fetch(VITE_BACKEND_URL, {
+  const response = await fetch(`${VITE_BACKEND_URL}/urls/`, {
     method: "POST",
     body: JSON.stringify(url),
     headers: {
