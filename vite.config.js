@@ -29,16 +29,17 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src"),
       Fonts: resolve(__dirname, "./src/assets/fonts"),
       Icons: resolve(__dirname, "./src/assets/icons"),
       Images: resolve(__dirname, "./src/assets/images"),
       Components: resolve(__dirname, "./src/components"),
       Configs: resolve(__dirname, "./src/configs"),
+      Helpers: resolve(__dirname, "./src/helpers"),
       Router: resolve(__dirname, "./src/router"),
       Services: resolve(__dirname, "./src/services"),
       Styles: resolve(__dirname, "./src/styles"),
       Views: resolve(__dirname, "./src/views"),
+      "@": resolve(__dirname, "./src"),
     },
   },
   plugins: [

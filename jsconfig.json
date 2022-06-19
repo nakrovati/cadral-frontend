@@ -3,16 +3,17 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "Fonts/*": ["src/assets/fonts/*"],
       "Icons/*": ["src/assets/icons/*"],
       "Images/*": ["src/assets/images/*"],
       "Components/*": ["src/components/*"],
       "Configs/*": ["src/configs/*"],
+      "Helpers/*": ["src/helpers/*"],
       "Router/*": ["src/router/*"],
       "Services/*": ["src/services/*"],
       "Styles/*": ["src/styles/*"],
-      "Views/*": ["src/views/*"]
+      "Views/*": ["src/views/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["src", "public"]
