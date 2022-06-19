@@ -12,9 +12,9 @@ import ReducerInput from "Components/ReducerInput.vue";
 import ReducerList from "Components/ReducerList.vue";
 
 const urlArray = ref(
-  localStorage.getItem("counter") === null
+  localStorage.getItem("url-array") === null
     ? []
-    : JSON.parse(localStorage.getItem("counter"))
+    : JSON.parse(localStorage.getItem("url-array"))
 );
 
 const isUrlArrayEmpty = computed(() => {
@@ -22,7 +22,7 @@ const isUrlArrayEmpty = computed(() => {
 });
 
 watch(urlArray.value, () => {
-  localStorage.setItem("counter", JSON.stringify(urlArray.value));
+  localStorage.setItem("url-array", JSON.stringify(urlArray.value));
 });
 
 function addUrl(urlForArray) {
