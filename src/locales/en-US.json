@@ -8,5 +8,16 @@
   },
   "reducer": {
     "buttonCopy": "Copy"
+  },
+  "originUrl": {
+    "modal": {
+      "title": "Insert your Url to find the original site",
+      "buttonFind": "Find",
+      "buttonClose": "Close",
+      "errors": {
+        "searchUrlIsEmpty": "The Url not entered",
+        "searchUrlIsIncorrect": "The Url is not correct"
+      }
+    }
   }
 }

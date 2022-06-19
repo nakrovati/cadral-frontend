@@ -9,11 +9,7 @@
       </button>
       <teleport to="body">
         <div class="modal" v-if="isOpen">
-          <TheOriginUrlModal
-            @close="isOpen = false"
-            title="Does this work?"
-            msg="I hope so"
-          />
+          <TheOriginUrlModal @close="isOpen = false" />
         </div>
       </teleport>
     </nav>
@@ -41,6 +37,7 @@ const isOpen = ref(false);
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 999;
 
   > div {
     background-color: #fff;

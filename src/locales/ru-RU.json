@@ -8,5 +8,16 @@
   },
   "reducer": {
     "buttonCopy": "Скопировать"
+  },
+  "originUrl": {
+    "modal": {
+      "title": "Вставьте ваш Url чтобы найти оригинальный сайт",
+      "buttonFind": "Найти",
+      "buttonClose": "Закрыть",
+      "errors": {
+        "searchUrlIsEmpty": "Сыылка не введёна",
+        "searchUrlIsIncorrect": "Ссылка не корректна"
+      }
+    }
   }
 }
