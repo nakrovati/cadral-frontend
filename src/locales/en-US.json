@@ -7,6 +7,6 @@
     "showOriginUrl": "show origin url"
   },
   "reducer": {
-    "copyButton": "Copy"
+    "buttonCopy": "Copy"
   }
 }

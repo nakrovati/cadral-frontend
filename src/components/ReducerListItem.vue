@@ -6,7 +6,7 @@
         props.shortUrl
       }}</a>
       <button class="url-item__button-copy-short-url" @click="copyShortUrl">
-        {{ t("reducer.copyButton") }}
+        {{ t("reducer.buttonCopy") }}
       </button>
     </div>
   </li>

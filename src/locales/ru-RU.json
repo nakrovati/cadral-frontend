@@ -7,6 +7,6 @@
     "showOriginUrl": "показать настоящий url"
   },
   "reducer": {
-    "copyButton": "Скопировать"
+    "buttonCopy": "Скопировать"
   }
 }
