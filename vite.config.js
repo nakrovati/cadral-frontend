@@ -2,12 +2,10 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueI18n from "@intlify/vite-plugin-vue-i18n";
 import svgLoader from "vite-svg-loader";
-import { resolve } from "path";
+import { resolve } from "node:path";
 
 export default defineConfig({
-  root: resolve(__dirname, "src"),
   build: {
-    outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -19,7 +17,6 @@ export default defineConfig({
       },
     },
   },
-  publicDir: resolve(__dirname, "public"),
   css: {
     preprocessorOptions: {
       scss: {
