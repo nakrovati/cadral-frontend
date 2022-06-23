@@ -48,7 +48,7 @@ function findOriginSite() {
     return false;
   }
 
-  const regexMatchesArray = searchUrl.value.match(siteRegex);
+  const [_, shortAdress] = searchUrl.value.match(siteRegex);
 
   if (!regexMatchesArray) {
     hasUrlIncorrectError.value = true;
@@ -58,7 +58,7 @@ function findOriginSite() {
   router
     .push({
       name: "OriginUrl",
-      params: { shortUrl: regexMatchesArray[1].concat("+") },
+      params: { shortUrl: shortAdress.concat("+") },
     })
     .then(() => emit("close"));
 }
