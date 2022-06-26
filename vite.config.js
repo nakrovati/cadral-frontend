@@ -8,9 +8,6 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        index: resolve(__dirname, "src", "index.html"),
-      },
       manualChunks: {
         "vendor.vue": ["node_modules/vue/dist/vue.esm-bundler.js"],
         "vendor.vue-i18n": ["node_modules/vue-i18n/index.js"],
