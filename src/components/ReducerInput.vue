@@ -21,7 +21,7 @@
 
 <script setup>
 import { ref, inject } from "vue";
-import IconClipboardRegular from "Icons/clipboard-regular.svg";
+import IconClipboard from "Assets/icons/clipboard-regular.svg";
 import isStringUrl from "Helpers/isStringUrl.js";
 
 const urlToReduce = ref();

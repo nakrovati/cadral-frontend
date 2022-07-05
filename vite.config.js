@@ -23,9 +23,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      Fonts: resolve(__dirname, "./src/assets/fonts"),
-      Icons: resolve(__dirname, "./src/assets/icons"),
-      Images: resolve(__dirname, "./src/assets/images"),
+      Assets: resolve(__dirname, "./src/assets"),
       Components: resolve(__dirname, "./src/components"),
       Configs: resolve(__dirname, "./src/configs"),
       Helpers: resolve(__dirname, "./src/helpers"),

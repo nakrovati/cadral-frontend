@@ -3,9 +3,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "Fonts/*": ["src/assets/fonts/*"],
-      "Icons/*": ["src/assets/icons/*"],
-      "Images/*": ["src/assets/images/*"],
+      "Assets/*": ["src/assets/*"],
       "Components/*": ["src/components/*"],
       "Configs/*": ["src/configs/*"],
       "Helpers/*": ["src/helpers/*"],
