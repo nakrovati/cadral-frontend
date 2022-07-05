@@ -13,16 +13,19 @@ const routes = [
     path: "/:shortUrl(\\w{7}[+]$)",
     name: "OriginUrl",
     beforeEnter: async (to, from, next) => {
-      console.log(to.path);
-      let response = await fetch(
-        `${VITE_BACKEND_URL}/urls${to.path.slice(0, -1)}`
-      );
-      if (response.ok) {
-        let json = await response.json();
-        OriginUrlProps = json;
-        next();
-      } else {
-        next({ name: "NotFound" });
+      try {
+        const response = await fetch(
+          `${VITE_BACKEND_URL}/urls${to.path.slice(0, -1)}`
+        );
+        if (response.ok) {
+          const json = await response.json();
+          OriginUrlProps = json;
+          next();
+        } else {
+          next({ name: "NotFound" });
+        }
+      } catch (error) {
+        console.error(error);
       }
     },
     props: () => OriginUrlProps,
