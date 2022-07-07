@@ -1,15 +1,23 @@
 @use "./colors";
 
+%transition {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+%focus {
+  &:focus {
+    outline: 3px solid colors.$element-focus;
+  }
+}
+
 body {
+  @extend %transition;
+
   background-color: colors.$background-light;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 20px;
-}
-
-body,
-button,
-a {
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 h1,
@@ -22,10 +30,20 @@ h6 {
 }
 
 button {
+  @extend %transition;
+  @extend %focus;
+
+  background-color: unset;
   border-radius: 10px;
 }
 
-@media screen and (max-width: 425px) {
+input,
+a {
+  @extend %focus;
+  @extend %transition;
+}
+
+@media (max-width: 425px) {
   body {
     font-size: 16px;
   }
