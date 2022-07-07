@@ -84,14 +84,14 @@ async function reduceURL() {
 
     .url-reducer__input {
       border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0 0 0 / 15%);
+      box-shadow: colors.$shadow;
       padding: 14px 60px 14px 20px;
       position: relative;
       text-overflow: ellipsis;
       width: 100%;
 
       &::placeholder {
-        color: colors.$text-search-placeholder;
+        color: colors.$input-placeholder;
       }
     }
   }
@@ -124,14 +124,14 @@ async function reduceURL() {
 }
 
 .button-reduce {
-  background-color: colors.$button;
+  background-color: colors.$button-reduce;
   color: colors.$text-white;
   margin-left: 40px;
   padding: 14px 40px;
 
   &:hover,
   &:active {
-    background-color: colors.$button-hover;
+    background-color: colors.$button-reduce-hover;
   }
 }
 

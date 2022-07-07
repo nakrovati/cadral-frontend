@@ -20,7 +20,7 @@ const { urlArray } = inject("urlProvide");
 .url-list {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0 0 0 / 15%);
+  box-shadow: colors.$shadow;
   display: flex;
   flex-direction: column;
   margin: 0;
