@@ -22,7 +22,7 @@
 <script setup>
 import { ref, inject } from "vue";
 import IconClipboard from "Assets/icons/clipboard-regular.svg";
-import isStringUrl from "Helpers/isStringUrl.js";
+import stringIsUrl from "Helpers/stringIsUrl.js";
 
 const urlToReduce = ref();
 const { addUrl } = inject("urlProvide");
@@ -41,7 +41,7 @@ async function reduceURL() {
     return false;
   }
 
-  if (!isStringUrl(urlToReduce.value)) {
+  if (!stringIsUrl(urlToReduce.value)) {
     return false;
   }
 
