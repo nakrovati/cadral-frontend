@@ -103,7 +103,7 @@ async function reduceURL() {
   padding: 8px 11px;
   position: absolute;
   right: 0;
-  width: 40px;
+  width: 50px;
   z-index: 1;
 
   &:focus {
