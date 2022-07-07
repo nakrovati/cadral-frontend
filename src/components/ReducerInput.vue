@@ -107,7 +107,7 @@ async function reduceURL() {
 
   &:hover,
   &:active {
-    background-color: colors.$button-copy-short-url-hover;
+    background-color: colors.$button-copy-hover;
   }
 }
 

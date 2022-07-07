@@ -13,6 +13,7 @@
     "buttonCopy": "Copy"
   },
   "originUrl": {
+    "buttonCopy": { "text": "Copy", "aria": "Copy short url" },
     "modal": {
       "title": "Insert your Url to find the original site",
       "buttonFind": "Find",
