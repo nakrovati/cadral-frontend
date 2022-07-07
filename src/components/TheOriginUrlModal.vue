@@ -4,22 +4,23 @@
     <input
       class="modal__input"
       type="text"
-      placeholder="example.com"
+      placeholder="cadral.fun/Abcdefg"
       v-model="searchUrl"
-      v-bind:class="{ error: hasUrlEmptyError || hasUrlIncorrectError }"
+      :class="{ error: hasError }"
     />
-    <div class="modal__error" v-if="hasUrlEmptyError">
-      {{ t("originUrl.modal.errors.searchUrlIsEmpty") }}
+    <Transition>
+      <div class="modal-errors" v-show="hasError">
+        {{ errorMessage }}
+      </div>
+    </Transition>
+    <div class="actions">
+      <button class="actions__close" @click="emit('close')">
+        {{ t("originUrl.modal.buttonClose") }}
+      </button>
+      <button class="actions__find" @click="findOriginSite">
+        {{ t("originUrl.modal.buttonFind") }}
+      </button>
     </div>
-    <div class="modal__error" v-else-if="hasUrlIncorrectError">
-      {{ t("originUrl.modal.errors.searchUrlIsIncorrect") }}
-    </div>
-    <button class="modal__button-find" @click="findOriginSite">
-      {{ t("originUrl.modal.buttonFind") }}
-    </button>
-    <button class="modal__button-close" @click="emit('close')">
-      {{ t("originUrl.modal.buttonClose") }}
-    </button>
   </div>
 </template>
 
@@ -28,30 +29,33 @@ import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import router from "Router";
 
+const { t } = useI18n();
+
 const searchUrl = ref(),
-  hasUrlEmptyError = ref(false),
-  hasUrlIncorrectError = ref(false);
+  hasError = ref(false),
+  errorMessage = ref();
 
 const emit = defineEmits(["close"]);
-const { t } = useI18n();
 
 const siteRegex = import.meta.env.PROD
   ? /^(?:https?:\/\/)?(?:www\.)?cadral\.fun\/(\w{7})[+]?$/
   : /^(?:https?:\/\/)?(?:www\.)?localhost\:3000\/(\w{7})[+]?$/;
 
 function findOriginSite() {
-  hasUrlEmptyError.value = false;
-  hasUrlIncorrectError.value = false;
+  errorMessage.value = null;
+  hasError.value = false;
 
   if (!searchUrl.value) {
-    hasUrlEmptyError.value = true;
+    errorMessage.value = t("originUrl.modal.errors.searchUrlIsEmpty");
+    hasError.value = true;
     return false;
   }
 
-  const [_, shortAdress] = searchUrl.value.match(siteRegex);
+  const [fullUrl, shortAdress] = searchUrl.value.match(siteRegex) ?? [];
 
-  if (!regexMatchesArray) {
-    hasUrlIncorrectError.value = true;
+  if (!fullUrl) {
+    errorMessage.value = t("originUrl.modal.errors.searchUrlIsIncorrect");
+    hasError.value = true;
     return false;
   }
 
@@ -60,36 +64,59 @@ function findOriginSite() {
       name: "OriginUrl",
       params: { shortUrl: shortAdress.concat("+") },
     })
-    .then(() => emit("close"));
+    .then(() => emit("close"))
+    .catch((error) => alert(error));
 }
 </script>
 
 <style lang="scss" scoped>
 .modal__wrapper {
-  box-shadow: 0 0 5px rgba(0 0 0 / 15%);
+  box-shadow: colors.$shadow;
 
-  // .modal__title {
-  // }
+  .modal__title {
+    font-size: 1.25em;
+    margin-bottom: 40px;
+  }
 
   .modal__input {
-    border: 2px solid black;
     border-radius: 10px;
-    padding: 0.5em 0;
+    box-shadow: colors.$shadow;
+    margin-bottom: 20px;
+    padding: 0.5em calc(1em - 1px);
     width: 100%;
+
+    &.error {
+      box-shadow: colors.$error-shadow;
+    }
   }
 
-  .modal__input.error {
-    background-color: red;
+  .modal-errors {
+    color: colors.$error;
+    margin-bottom: 40px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+
+  .actions__close {
+    color: colors.$text-black;
+    padding: 0.5em 2em;
   }
 
-  .modal__error {
-    color: #e34850;
+  .actions__find {
+    background-color: colors.$primary;
+    color: colors.$text-white;
+    padding: 0.5em 2em;
   }
+}
 
-  // .modal__button-find {
-  // }
-
-  // .modal__button-close {
-  // }
+@media (prefers-color-scheme: dark) {
+  .modal__title,
+  .actions .actions__close {
+    color: colors.$text-white;
+  }
 }
 </style>

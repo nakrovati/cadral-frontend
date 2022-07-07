@@ -5,13 +5,6 @@ $background-light: #edeef0;
 $background-dark: #24292e;
 $text-white: #fff;
 $text-black: #000;
-$text-search-placeholder: #9395a5;
-$button: $primary;
-$button-hover: color.scale(
-  $color: $primary,
-  $blackness: 20%,
-);
-$button-copy-short-url: #edf2fe;
-$button-copy-short-url-hover: #cedafa;
-$button-active: #114770;
-$button-disabled: #d9d9d9;
+$error: #f00;
+$error-shadow: 0 0 5px #f006;
+$shadow: 0 0 5px #0003;
