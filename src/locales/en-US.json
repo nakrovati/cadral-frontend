@@ -2,15 +2,15 @@
   "header": {
     "showOriginUrl": "show origin url"
   },
-  "inner": {
-    "title": "Shorten the link",
-    "subtitle": "Create a short link to copy to your website, social media, and messengers."
-  },
-  "header": {
-    "showOriginUrl": "show origin url"
-  },
-  "reducer": {
-    "buttonCopy": "Copy"
+  "home": {
+    "inner": {
+      "title": "Shorten the link",
+      "subtitle": "Create a short link to copy to your website, social media, and messengers."
+    },
+    "reducer": {
+      "urlExample": "Example: {example}",
+      "buttonCopy": "Copy"
+    }
   },
   "originUrl": {
     "buttonCopy": { "text": "Copy", "aria": "Copy short url" },

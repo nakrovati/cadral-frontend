@@ -1,9 +1,9 @@
 <template>
   <div class="inner">
     <div class="inner__left-section">
-      <h1 class="inner__title">{{ t("inner.title") }}</h1>
+      <h1 class="inner__title">{{ t("home.inner.title") }}</h1>
       <div class="inner__subtitle">
-        {{ t("inner.subtitle") }}
+        {{ t("home.inner.subtitle") }}
       </div>
     </div>
     <div class="inner__right-section">
@@ -34,8 +34,8 @@ const { t } = useI18n();
 .inner {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 40px;
+  padding: 0 20px;
 
   .inner__left-section {
     display: flex;
@@ -63,7 +63,7 @@ const { t } = useI18n();
   }
 }
 
-@media screen and (max-width: 912px) {
+@media screen and (max-width: 920px) {
   .inner__image img {
     display: none;
   }
@@ -71,15 +71,16 @@ const { t } = useI18n();
 
 @media screen and (max-width: 425px) {
   .inner__title {
-    font-size: 3em;
+    display: none;
   }
 
   .inner__subtitle {
     font-size: 1.25em;
+    margin-top: 0;
   }
 }
 
-@media screen and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .inner__left-section {
     color: colors.$text-white;
   }
