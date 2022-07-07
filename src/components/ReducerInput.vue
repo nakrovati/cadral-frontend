@@ -106,10 +106,6 @@ async function reduceURL() {
   width: 50px;
   z-index: 1;
 
-  &:focus {
-    outline: 3px solid colors.$button-copy-short-url-hover;
-  }
-
   &:hover,
   &:active {
     background-color: colors.$button-copy-hover;
