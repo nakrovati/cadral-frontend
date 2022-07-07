@@ -12,7 +12,12 @@
         aria-label="copy text to clipboard"
         @click="copyToClipboard"
       >
-        <IconClipboardRegular class="button-copy__icon" />
+        <object
+          class="button-copy__icon"
+          :data="IconClipboard"
+          type="image/svg+xml"
+          tabindex="-1"
+        ></object>
       </button>
     </div>
     <button class="button button-reduce" @click="reduceURL">Create</button>
@@ -21,7 +26,7 @@
 
 <script setup>
 import { ref, inject } from "vue";
-import IconClipboard from "Assets/icons/clipboard-regular.svg";
+import IconClipboard from "Assets/icons/clipboard-regular.svg?url";
 import stringIsUrl from "Helpers/stringIsUrl.js";
 
 const urlToReduce = ref();
@@ -108,6 +113,13 @@ async function reduceURL() {
   &:hover,
   &:active {
     background-color: colors.$button-copy-hover;
+  }
+
+  &__icon {
+    height: 75%;
+    position: relative;
+    width: 100%;
+    z-index: -1;
   }
 }
 
