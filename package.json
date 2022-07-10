@@ -19,7 +19,7 @@
     "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "lint:style": "stylelint **/*.{css,scss,vue} --fix",
+    "lint": "eslint --ext .js,.vue src",
     "format": "prettier . --write",
     "prepare": "husky install"
   },
@@ -36,6 +36,9 @@
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "autoprefixer": "^10.4.5",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.2.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.0",
     "postcss": "^8.4.12",
