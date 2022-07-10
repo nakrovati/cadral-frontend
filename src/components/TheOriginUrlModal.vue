@@ -2,14 +2,14 @@
   <div class="modal__wrapper">
     <h3 class="modal__title">{{ t("originUrl.modal.title") }}</h3>
     <input
+      v-model="searchUrl"
       class="modal__input"
       type="text"
       placeholder="cadral.fun/Abcdefg"
-      v-model="searchUrl"
       :class="{ error: hasError }"
     />
     <Transition>
-      <div class="modal-errors" v-show="hasError">
+      <div v-show="hasError" class="modal-errors">
         {{ errorMessage }}
       </div>
     </Transition>
@@ -39,7 +39,7 @@ const emit = defineEmits(["close"]);
 
 const siteRegex = import.meta.env.PROD
   ? /^(?:https?:\/\/)?(?:www\.)?cadral\.fun\/(\w{7})[+]?$/
-  : /^(?:https?:\/\/)?(?:www\.)?localhost\:3000\/(\w{7})[+]?$/;
+  : /^(?:https?:\/\/)?(?:www\.)?localhost:3000\/(\w{7})[+]?$/;
 
 function findOriginSite() {
   errorMessage.value = null;

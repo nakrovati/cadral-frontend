@@ -2,10 +2,10 @@
   <div class="url-reducer">
     <div class="url-reducer__container">
       <input
+        v-model="urlToReduce"
         class="url-reducer__input"
         placeholder="Enter the link here"
         type="text"
-        v-model="urlToReduce"
       />
       <button
         class="button-copy"

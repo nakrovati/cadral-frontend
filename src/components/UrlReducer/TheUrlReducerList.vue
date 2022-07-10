@@ -3,8 +3,8 @@
     <UrlReducerListItem
       v-for="(item, index) in urlArray"
       :key="index"
-      :initialUrl="item.initialUrl"
-      :shortUrl="item.shortUrl"
+      :initial-url="item.initialUrl"
+      :short-url="item.shortUrl"
     />
   </ul>
 </template>

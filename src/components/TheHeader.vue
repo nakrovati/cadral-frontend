@@ -3,11 +3,11 @@
     <router-link class="header__logo" to="/">Cadral URL</router-link>
     <div class="menu">
       <nav class="menu__navigation">
-        <a @click="isOpen = true" class="navigation__item">
+        <a class="navigation__item" @click="isOpen = true">
           {{ t("header.showOriginUrl") }}
         </a>
         <teleport to="body">
-          <div class="modal" v-if="isOpen">
+          <div v-if="isOpen" class="modal">
             <TheOriginUrlModal @close="isOpen = false" />
           </div>
         </teleport>

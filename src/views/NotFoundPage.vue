@@ -2,8 +2,8 @@
   <main class="intro">
     <div class="container">
       <img
-        alt="A robot with a magnifying glass searches for URLs"
         ref="image"
+        alt="A robot with a magnifying glass searches for URLs"
       />
     </div>
   </main>
