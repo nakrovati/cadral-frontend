@@ -5,12 +5,10 @@
       <router-view />
     </div>
   </main>
-  <TheFooter />
 </template>
 
 <script setup>
 import TheHeader from "Components/TheHeader.vue";
-import TheFooter from "Components/TheFooter.vue";
 </script>
 
 <style lang="scss" scoped>
