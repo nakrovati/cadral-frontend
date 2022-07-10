@@ -20,6 +20,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue src",
+    "style": "stylelint **/*.{css,scss,vue}",
     "format": "prettier . --write",
     "prepare": "husky install"
   },
