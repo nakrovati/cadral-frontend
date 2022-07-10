@@ -44,9 +44,9 @@ import IconClipboard from "Assets/icons/clipboard-regular.svg?url";
 const { t, locale } = useI18n();
 
 const props = defineProps({
-  shortUrl: String,
-  initialUrl: String,
-  dateCreated: String,
+  shortUrl: { type: String, required: true },
+  initialUrl: { type: String, required: true },
+  dateCreated: { type: String, default: new Date() },
 });
 
 console.log(props.shortUrl);

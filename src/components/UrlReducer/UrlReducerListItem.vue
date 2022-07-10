@@ -18,8 +18,8 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const props = defineProps({
-  initialUrl: String,
-  shortUrl: String,
+  initialUrl: { type: String, required: true },
+  shortUrl: { type: String, required: true },
 });
 
 async function copyShortUrl() {
