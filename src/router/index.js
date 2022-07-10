@@ -1,9 +1,9 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Home from "Views/Home.vue";
+import Home from "Views/HomePage.vue";
 
 const { VITE_BACKEND_URL } = import.meta.env;
-const NotFound = () => import("Views/NotFound.vue");
-const OriginUrl = () => import("Views/OriginUrl.vue");
+const NotFound = () => import("Views/NotFoundPage.vue");
+const OriginUrl = () => import("Views/OriginUrlPage.vue");
 
 let OriginUrlProps = {};
 

@@ -20,12 +20,12 @@
       </picture>
     </div>
   </div>
-  <Reducer class="reducer" />
+  <TheReducer class="reducer" />
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import Reducer from "Components/Reducer.vue";
+import TheReducer from "Components/TheReducer.vue";
 
 const { t } = useI18n();
 </script>
