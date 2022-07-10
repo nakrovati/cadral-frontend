@@ -25,7 +25,7 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import TheReducer from "Components/TheReducer.vue";
+import TheReducer from "Components/UrlReducer/TheUrlReducer.vue";
 
 const { t } = useI18n();
 </script>

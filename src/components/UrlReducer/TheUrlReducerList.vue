@@ -1,6 +1,6 @@
 <template>
   <ul class="url-list">
-    <ReducerListItem
+    <UrlReducerListItem
       v-for="(item, index) in urlArray"
       :key="index"
       :initialUrl="item.initialUrl"
@@ -11,7 +11,7 @@
 
 <script setup>
 import { inject } from "vue";
-import ReducerListItem from "Components/ReducerListItem.vue";
+import UrlReducerListItem from "Components/UrlReducer/UrlReducerListItem.vue";
 
 const { urlArray } = inject("urlProvide");
 </script>

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <ReducerInput />
+    <UrlReducerInput />
     <div class="url-example">
       {{ t("home.reducer.urlExample", { example: "https://google.com" }) }}
     </div>
     <Transition>
-      <ReducerList v-if="isUrlArrayEmpty" />
+      <UrlReducerList v-if="isUrlArrayEmpty" />
     </Transition>
   </div>
 </template>
@@ -13,8 +13,8 @@
 <script setup>
 import { ref, watch, computed, provide } from "vue";
 import { useI18n } from "vue-i18n";
-import ReducerInput from "Components/ReducerInput.vue";
-import ReducerList from "Components/ReducerList.vue";
+import UrlReducerInput from "Components/UrlReducer/TheUrlReducerInput.vue";
+import UrlReducerList from "Components/UrlReducer/TheUrlReducerList.vue";
 
 const { t } = useI18n();
 
