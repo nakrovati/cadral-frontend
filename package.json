@@ -26,7 +26,11 @@
   },
   "lint-staged": {
     "*.{css,scss,vue}": "stylelint --fix",
-    "*.{js,json,html,vue,md}": "prettier --write"
+    "*.{json,md,html}": "prettier --write",
+    "*.{js,vue}": [
+      "prettier --write",
+      "eslint --fix src"
+    ]
   },
   "dependencies": {
     "vue": "^3.2.36",
