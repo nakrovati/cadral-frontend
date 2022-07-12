@@ -1,7 +1,9 @@
 <template>
   <div class="url">
     <div class="url__initial-url">{{ initialUrl }}</div>
-    <div class="url__date-created">{{ normalizedDate }}</div>
+    <time :datetime="props.dateCreated" class="url__date-created">{{
+      normalizedDate
+    }}</time>
     <div class="url__short-url">
       <span class="url__actions-left">
         <object
