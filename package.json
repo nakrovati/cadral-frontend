@@ -20,9 +20,11 @@
     "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "eslint . --ext .js,.vue",
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix",
     "style": "stylelint **/*.{css,scss,vue}",
     "format": "prettier . --write",
     "prepare": "husky install"
