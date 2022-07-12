@@ -1,14 +1,14 @@
 {
   "name": "cadral-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "The frontend of the Cadral url shortening service.",
   "main": "./src/main.js",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nakrovati/cadral-frontend.git"
   },
-  "author": "Daniil Zhuravlev <nakrovati@outlook.com>",
+  "author": "Daniil Zhuravlev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nakrovati/cadral-frontend/issues"
