@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueI18n from "@intlify/vite-plugin-vue-i18n";
 import svgLoader from "vite-svg-loader";
 import { resolve } from "node:path";
 
@@ -10,7 +9,9 @@ export default defineConfig({
     rollupOptions: {
       manualChunks: {
         "vendor.vue": ["node_modules/vue/dist/vue.esm-bundler.js"],
-        "vendor.vue-i18n": ["node_modules/vue-i18n/index.js"],
+        "vendor.vue-i18n": [
+          "node_modules/vue-i18n/dist/vue-i18n.esm-bundler.js",
+        ],
       },
     },
   },
@@ -21,26 +22,24 @@ export default defineConfig({
       },
     },
   },
+  define: {
+    __VUE_I18N_LEGACY_API__: false,
+  },
   resolve: {
     alias: {
-      Assets: resolve(__dirname, "./src/assets"),
-      Components: resolve(__dirname, "./src/components"),
-      Configs: resolve(__dirname, "./src/configs"),
-      Helpers: resolve(__dirname, "./src/helpers"),
-      Router: resolve(__dirname, "./src/router"),
-      Services: resolve(__dirname, "./src/services"),
-      Styles: resolve(__dirname, "./src/styles"),
-      Views: resolve(__dirname, "./src/views"),
-      "@": resolve(__dirname, "./src"),
+      Assets: resolve("./src/assets"),
+      Components: resolve("./src/components"),
+      Configs: resolve("./src/configs"),
+      Helpers: resolve("./src/helpers"),
+      Locales: resolve("./src/locales"),
+      Router: resolve("./src/router"),
+      Services: resolve("./src/services"),
+      Styles: resolve("./src/styles"),
+      Views: resolve("./src/views"),
+      "@": resolve("./src"),
     },
   },
-  plugins: [
-    vue(),
-    vueI18n({
-      include: resolve(__dirname, "./src/locales/**"),
-    }),
-    svgLoader(),
-  ],
+  plugins: [vue(), svgLoader()],
   server: {
     https: true,
     port: 8080,

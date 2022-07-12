@@ -1,8 +1,15 @@
 import { createI18n } from "vue-i18n";
-import messages from "@intlify/vite-plugin-vue-i18n/messages";
+import EN from "Locales/en-US.json";
+import RU from "Locales/ru-RU.json";
+
+const messages = {
+  ...EN,
+  ...RU,
+};
 
 const i18n = createI18n({
-  fallbackLocale: "en-US",
+  locale: navigator.language,
+  fallbackLocale: "ru-RU",
   messages,
 });
 

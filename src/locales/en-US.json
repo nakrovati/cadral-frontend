@@ -1,26 +1,28 @@
 {
-  "header": {
-    "showOriginUrl": "show origin url"
-  },
-  "home": {
-    "inner": {
-      "title": "Shorten the link",
-      "subtitle": "Create a short link to copy to your website, social media, and messengers."
+  "en-US": {
+    "header": {
+      "showOriginUrl": "show origin url"
     },
-    "reducer": {
-      "urlExample": "Example: {example}",
-      "buttonCopy": "Copy"
-    }
-  },
-  "originUrl": {
-    "buttonCopy": { "text": "Copy", "aria": "Copy short url" },
-    "modal": {
-      "title": "Insert your Url to find the original site",
-      "buttonFind": "Find",
-      "buttonClose": "Close",
-      "errors": {
-        "searchUrlIsEmpty": "The Url not entered",
-        "searchUrlIsIncorrect": "The Url is not correct"
+    "home": {
+      "inner": {
+        "title": "Shorten the link",
+        "subtitle": "Create a short link to copy to your website, social media, and messengers."
+      },
+      "reducer": {
+        "urlExample": "Example: {example}",
+        "buttonCopy": "Copy"
+      }
+    },
+    "originUrl": {
+      "buttonCopy": { "text": "Copy", "aria": "Copy short url" },
+      "modal": {
+        "title": "Insert your Url to find the original site",
+        "buttonFind": "Find",
+        "buttonClose": "Close",
+        "errors": {
+          "searchUrlIsEmpty": "The Url not entered",
+          "searchUrlIsIncorrect": "The Url is not correct"
+        }
       }
     }
   }

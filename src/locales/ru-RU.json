@@ -1,29 +1,31 @@
 {
-  "header": {
-    "showOriginUrl": "показать настоящий url"
-  },
-  "home": {
-    "inner": {
-      "title": "Сократите свою ссылку",
-      "subtitle": "Создайте короткую ссылку для копирования на свой сайт, в социальные сети и мессенджеры."
+  "ru-RU": {
+    "header": {
+      "showOriginUrl": "показать настоящий url"
     },
-    "reducer": {
-      "urlExample": "Например: {example}",
-      "buttonCopy": "Скопировать"
-    }
-  },
-  "originUrl": {
-    "buttonCopy": {
-      "text": "Скопировать",
-      "aria": "Скопировать укороченный url"
+    "home": {
+      "inner": {
+        "title": "Сократите свою ссылку",
+        "subtitle": "Создайте короткую ссылку для копирования на свой сайт, в социальные сети и мессенджеры."
+      },
+      "reducer": {
+        "urlExample": "Например: {example}",
+        "buttonCopy": "Скопировать"
+      }
     },
-    "modal": {
-      "title": "Вставьте ваш Url чтобы найти оригинальный сайт",
-      "buttonFind": "Найти",
-      "buttonClose": "Закрыть",
-      "errors": {
-        "searchUrlIsEmpty": "Сыылка не введёна",
-        "searchUrlIsIncorrect": "Ссылка не корректна"
+    "originUrl": {
+      "buttonCopy": {
+        "text": "Скопировать",
+        "aria": "Скопировать url"
+      },
+      "modal": {
+        "title": "Вставьте ваш Url чтобы найти оригинальный сайт",
+        "buttonFind": "Найти",
+        "buttonClose": "Закрыть",
+        "errors": {
+          "searchUrlIsEmpty": "Сыылка не введёна",
+          "searchUrlIsIncorrect": "Ссылка не корректна"
+        }
       }
     }
   }
