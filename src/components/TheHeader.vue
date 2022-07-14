@@ -1,9 +1,9 @@
 <template>
   <header class="header">
     <router-link class="header__logo" to="/">Cadral URL</router-link>
-    <div class="menu">
-      <nav class="menu__navigation">
-        <a class="navigation__item" @click="isOpen = true">
+    <ul class="menu">
+      <li class="menu__item">
+        <a class="menu__link" @click="isOpen = true">
           {{ t("header.showOriginUrl") }}
         </a>
         <teleport to="body">
@@ -11,8 +11,8 @@
             <TheOriginUrlModal @close="isOpen = false" />
           </div>
         </teleport>
-      </nav>
-    </div>
+      </li>
+    </ul>
   </header>
 </template>
 
@@ -44,18 +44,18 @@ const isOpen = ref(false);
 .menu {
   align-items: center;
   display: flex;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-  .language-switcher {
-    height: 1.5em;
-  }
+  .menu__item {
+    .menu__link {
+      cursor: pointer;
 
-  .menu__navigation {
-    background-color: inherit;
-    color: inherit;
-    white-space: nowrap;
-
-    &:hover {
-      color: colors.$primary;
+      &:hover {
+        color: colors.$primary;
+      }
     }
   }
 }
