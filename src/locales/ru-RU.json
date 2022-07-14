@@ -9,8 +9,8 @@
         "subtitle": "Создайте короткую ссылку для копирования на свой сайт, в социальные сети и мессенджеры."
       },
       "reducer": {
-        "urlExample": "Например: {example}",
-        "buttonCopy": "Скопировать"
+        "buttonCopy": "Скопировать",
+        "urlExample": "Например: {example}"
       }
     },
     "originUrl": {

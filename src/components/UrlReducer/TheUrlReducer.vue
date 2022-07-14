@@ -2,19 +2,25 @@
   <div>
     <UrlReducerInput />
     <div class="url-example">
-      {{ t("home.reducer.urlExample", { example: "https://google.com" }) }}
+      {{ t("home.reducer.urlExample", { example: urlExample }) }}
     </div>
     <Transition>
-      <UrlReducerList v-if="isUrlArrayEmpty" />
+      <LazyUrlReducerList v-if="isUrlArrayEmpty" />
     </Transition>
   </div>
 </template>
 
 <script setup>
-import { ref, watch, computed, provide } from "vue";
+import { ref, watch, computed, provide, defineAsyncComponent } from "vue";
 import { useI18n } from "vue-i18n";
 import UrlReducerInput from "Components/UrlReducer/TheUrlReducerInput.vue";
-import UrlReducerList from "Components/UrlReducer/TheUrlReducerList.vue";
+import getRandomUrl from "Helpers/getRandomUrl";
+
+const LazyUrlReducerList = defineAsyncComponent({
+  loader: () => import("Components/UrlReducer/TheUrlReducerList.vue"),
+});
+
+const urlExample = getRandomUrl();
 
 const { t } = useI18n();
 
@@ -24,12 +30,13 @@ const urlArray = ref(
     : JSON.parse(localStorage.getItem("url-array"))
 );
 
-const isUrlArrayEmpty = computed(() => {
-  return urlArray.value.length ? true : false;
-});
-
+// Updates localstorage by storing objects with shortened url data in the 'url-array' array
 watch(urlArray.value, () => {
   localStorage.setItem("url-array", JSON.stringify(urlArray.value));
+});
+
+const isUrlArrayEmpty = computed(() => {
+  return urlArray.value.length;
 });
 
 function addUrl(urlForArray) {
