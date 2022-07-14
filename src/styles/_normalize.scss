@@ -77,17 +77,3 @@ button {
   appearance: button;
   cursor: pointer;
 }
-
-[type="search"] {
-  appearance: textfield;
-  outline-offset: -2px;
-}
-
-*:focus-visible {
-  outline: 0;
-}
-
-::-webkit-file-upload-button {
-  appearance: button;
-  font: inherit;
-}
