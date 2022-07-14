@@ -9,6 +9,8 @@
         "subtitle": "Create a short link to copy to your website, social media, and messengers."
       },
       "reducer": {
+        "inputPlaceholder": "Enter the link here",
+        "buttonReduce": "Create",
         "buttonCopy": "Copy",
         "urlExample": "Example: {example}"
       }

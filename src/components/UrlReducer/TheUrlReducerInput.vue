@@ -4,7 +4,7 @@
       <input
         v-model="urlToReduce"
         class="url-reducer__input"
-        placeholder="Enter the link here"
+        :placeholder="t('home.reducer.inputPlaceholder')"
         type="text"
       />
       <button
@@ -20,14 +20,19 @@
         ></object>
       </button>
     </div>
-    <button class="button button-reduce" @click="reduceURL">Create</button>
+    <button class="button button-reduce" @click="reduceURL">
+      {{ t("home.reducer.buttonReduce") }}
+    </button>
   </div>
 </template>
 
 <script setup>
 import { ref, inject } from "vue";
+import { useI18n } from "vue-i18n";
 import IconClipboard from "Assets/icons/clipboard-regular.svg?url";
 import stringIsUrl from "Helpers/stringIsUrl.js";
+
+const { t } = useI18n();
 
 const urlToReduce = ref();
 const { addUrl } = inject("urlProvide");
