@@ -4,7 +4,7 @@ Url shrinker with dark theme support and multiple languages.
 
 ## <img src="https://user-images.githubusercontent.com/59262179/180575820-f4a5d7c8-598e-4007-a3be-d477d94c5ddc.png" alt="icon link" height="30"/> Features
 
-- Resolvig
+- Resolving the original url from the short url without navigating to it
 - Multiply languages
 - Lignt and dark themes
 
