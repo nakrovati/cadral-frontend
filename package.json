@@ -25,13 +25,13 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
-    "style": "stylelint **/*.{css,scss,vue}",
-    "style:fix": "stylelint **/*.{css,scss,vue} --fix",
+    "style": "stylelint **/*.{scss,vue}",
+    "style:fix": "stylelint **/*.{scss,vue} --fix",
     "format": "prettier . --write",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{css,scss,vue}": "stylelint --fix",
+    "*.{scss,vue}": "stylelint --fix",
     "*.{json,md,html}": "prettier --write",
     "*.{js,vue}": [
       "prettier --write",
