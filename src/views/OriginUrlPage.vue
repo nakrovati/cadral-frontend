@@ -48,10 +48,8 @@ const { t, locale } = useI18n();
 const props = defineProps({
   shortUrl: { type: String, required: true },
   initialUrl: { type: String, required: true },
-  dateCreated: { type: String, default: new Date() },
+  dateCreated: { type: String, required: true },
 });
-
-console.log(props.shortUrl);
 
 const normalizedDate = computed(() =>
   new Intl.DateTimeFormat(locale.value, {

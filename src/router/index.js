@@ -17,6 +17,7 @@ const routes = [
         const response = await fetch(
           `${VITE_BACKEND_URL}/urls${to.path.slice(0, -1)}`
         );
+
         if (response.ok) {
           const json = await response.json();
           OriginUrlProps = json;
