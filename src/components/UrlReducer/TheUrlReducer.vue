@@ -2,7 +2,7 @@
   <div>
     <UrlReducerInput />
     <div class="url-example">
-      {{ t("home.reducer.urlExample", { example: urlExample }) }}
+      {{ t("home.reducer.exampleUrl", { example: exampleUrl }) }}
     </div>
     <Transition>
       <LazyUrlReducerList v-if="isUrlArrayEmpty" />
@@ -20,7 +20,7 @@ const LazyUrlReducerList = defineAsyncComponent({
   loader: () => import("Components/UrlReducer/TheUrlReducerList.vue"),
 });
 
-const urlExample = getRandomUrl();
+const exampleUrl = getRandomUrl();
 
 const { t } = useI18n();
 
@@ -49,7 +49,7 @@ provide("urlProvide", { urlArray, addUrl });
 <style lang="scss" scoped>
 .url-example {
   font-size: 0.75em;
-  margin: 10px 20px 30px;
+  margin: 0.5em 2em 2em;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,7 @@
 {
   "en-US": {
     "header": {
-      "showOriginUrl": "show origin url"
+      "showOriginUrl": "show origin Url"
     },
     "home": {
       "inner": {
@@ -12,13 +12,14 @@
         "inputPlaceholder": "Enter the link here",
         "buttonReduce": "Create",
         "buttonCopy": "Copy",
-        "urlExample": "Example: {example}"
+        "exampleUrl": "Example: {example}"
       }
     },
     "originUrl": {
-      "buttonCopy": { "text": "Copy", "aria": "Copy short url" },
+      "buttonCopy": { "text": "Copy", "aria": "Copy short Url" },
       "modal": {
         "title": "Insert your Url to find the original site",
+        "input": { "aria": "Shorten Url" },
         "buttonFind": "Find",
         "buttonClose": "Close",
         "errors": {

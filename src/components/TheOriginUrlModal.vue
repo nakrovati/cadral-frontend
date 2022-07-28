@@ -3,6 +3,7 @@
     <h3 class="modal__title">{{ t("originUrl.modal.title") }}</h3>
     <input
       v-model="searchUrl"
+      :aria-label="t('originUrl.modal.input.aria')"
       class="modal__input"
       type="text"
       placeholder="cadral.fun/Abcdefg"
@@ -104,12 +105,22 @@ function findOriginSite() {
   .actions__close {
     color: colors.$text-black;
     padding: 0.5em 2em;
+
+    &:hover,
+    &:active {
+      color: colors.$primary;
+    }
   }
 
   .actions__find {
     background-color: colors.$primary;
     color: colors.$text-white;
     padding: 0.5em 2em;
+
+    &:hover,
+    &:active {
+      background-color: colors.$button-reduce-hover;
+    }
   }
 }
 

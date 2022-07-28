@@ -1,18 +1,20 @@
 <template>
   <header class="header">
-    <router-link class="header__logo" to="/">Cadral URL</router-link>
-    <ul class="menu">
-      <li class="menu__item">
-        <a class="menu__link" @click="isOpen = true">
-          {{ t("header.showOriginUrl") }}
-        </a>
-        <teleport to="body">
-          <div v-if="isOpen" class="modal">
-            <TheOriginUrlModal @close="isOpen = false" />
-          </div>
-        </teleport>
-      </li>
-    </ul>
+    <div class="container">
+      <router-link class="header__logo" to="/">Cadral URL</router-link>
+      <ul class="menu">
+        <li class="menu__item">
+          <button class="menu__link" @click="isOpen = true">
+            {{ t("header.showOriginUrl") }}
+          </button>
+          <teleport to="body">
+            <div v-if="isOpen" class="modal">
+              <TheOriginUrlModal @close="isOpen = false" />
+            </div>
+          </teleport>
+        </li>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -28,10 +30,6 @@ const isOpen = ref(false);
 
 <style lang="scss" scoped>
 .header {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 2560px;
   padding: 10px 40px;
 
   .header__logo {
@@ -39,6 +37,13 @@ const isOpen = ref(false);
     font-size: 1.5em;
     font-weight: bold;
   }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1920px;
 }
 
 .menu {
@@ -51,9 +56,10 @@ const isOpen = ref(false);
 
   .menu__item {
     .menu__link {
-      cursor: pointer;
+      border-radius: 0;
 
-      &:hover {
+      &:hover,
+      &:active {
         color: colors.$primary;
       }
     }

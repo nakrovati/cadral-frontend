@@ -137,12 +137,6 @@ async function reduceURL() {
 }
 
 @media screen and (max-width: 768px) {
-  .button-reduce {
-    margin-left: 20px;
-  }
-}
-
-@media screen and (max-width: 520px) {
   .url-reducer {
     flex-wrap: wrap;
 
@@ -152,7 +146,7 @@ async function reduceURL() {
   }
 
   .button-reduce {
-    margin: 10px 0 0;
+    margin: 1em 0 0;
     width: 100%;
   }
 }

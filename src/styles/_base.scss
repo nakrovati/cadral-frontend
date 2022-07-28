@@ -6,8 +6,8 @@
     background-color 0.3s ease;
 }
 
-%focus {
-  &:focus {
+%focus-visiable {
+  &:focus-visible {
     outline: 3px solid colors.$element-focus;
   }
 }
@@ -27,20 +27,22 @@ h4,
 h5,
 h6 {
   font-family: Lekton, Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 button {
   @extend %transition;
-  @extend %focus;
+  @extend %focus-visiable;
 
   background-color: unset;
   border-radius: 10px;
+  padding: 0;
 }
 
 input,
 a {
-  @extend %focus;
   @extend %transition;
+  @extend %focus-visiable;
 }
 
 @media (max-width: 425px) {

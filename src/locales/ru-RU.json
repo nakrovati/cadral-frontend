@@ -1,7 +1,7 @@
 {
   "ru-RU": {
     "header": {
-      "showOriginUrl": "показать настоящий url"
+      "showOriginUrl": "показать настоящий Url"
     },
     "home": {
       "inner": {
@@ -12,16 +12,17 @@
         "inputPlaceholder": "Введите ссылку сюда",
         "buttonReduce": "Создать",
         "buttonCopy": "Скопировать",
-        "urlExample": "Например: {example}"
+        "exampleUrl": "Например: {example}"
       }
     },
     "originUrl": {
       "buttonCopy": {
         "text": "Скопировать",
-        "aria": "Скопировать url"
+        "aria": "Скопировать Url"
       },
       "modal": {
         "title": "Вставьте ваш Url чтобы найти оригинальный сайт",
+        "input": { "aria": "Сокращённый Url" },
         "buttonFind": "Найти",
         "buttonClose": "Закрыть",
         "errors": {
